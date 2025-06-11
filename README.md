@@ -23,7 +23,7 @@ Welcome to my digital world! This is my **interactive personal portfolio**, buil
 - Custom GIFs and icons
 
 ## 📬 Contact
-📧 Email: mailto:basakanu1313@gmail.com 
+📧 Email: basakanu1313@gmail.com 
 🔗 [LinkedIn](https://www.linkedin.com/in/anushka-basak-39b2a525a) | [GitHub](https://github.com/basak-anushka13)
 
 ---
