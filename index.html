@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anushka | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="script.js" defer></script>
+</head>
+<script>
+  const canvas = document.getElementById("matrix");
+  const ctx = canvas.getContext("2d");
+
+  // Fullscreen canvas
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  const letters = "01";
+  const fontSize = 16;
+  const columns = canvas.width / fontSize;
+
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff9f";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw, 35);
+
+  // Responsive canvas
+  window.addEventListener('resize', () => {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+  });
+</script>
+
+<body>
+<div class="toggle-container">
+  <label class="switch">
+    <input type="checkbox" id="modeToggle">
+    <span class="slider round"></span>
+  </label>
+</div>
+
+<canvas id="matrix"></canvas>
+  <header class="hero">
+  <h1><span class="bounce-in-text">Hello, I am Anushka!</span></h1>
+  <img src="girl.gif" alt="Anushka Greeting" class="hero-gif" />
+  <p>Web Developer | Designer | Learner</p>
+  <a href="#about" class="scroll-btn">Explore my achievements ⬇️</a>
+</header>
+
+  <nav class="navbar">
+  <a href="#about"><i class="fas fa-user"></i> About 👩‍💻</a>
+  <a href="#skills"><i class="fas fa-code"></i> Skills 💡</a>
+  <a href="#projects"><i class="fas fa-folder-open"></i> Projects 🚀</a>
+  <a href="#contact"><i class="fas fa-envelope"></i> Contact 📬</a>
+</nav>
+
+  <section id="about" class="section">
+    <h2>About Me 👩‍🎓</h2>
+    <p>I'm a curious and driven engineering student with a passion for creating interactive web experiences.<br/>
+    With a strong foundation in programming, I’ve explored certified paths in machine learning and cloud computing to expand my tech toolkit.</p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>  Skills 🚀</h2>
+    <p>
+      🌐 <b>Web Development</b><br/>
+      Built interactive web apps using HTML, CSS, JavaScript, with experience in React.js and Node.js.<br/><br/>
+      
+      🧠 <b>Machine Learning</b><br/>
+      Comfortable with Python and exploring the exciting world of ML algorithms and intelligent systems.<br/><br/>
+      
+      ☁️ <b>Database & Cloud</b><br/>
+      Skilled in handling databases and working with cloud platforms for scalable app development.<br/><br/>
+      
+      🎯 <b>Leadership & Soft Skills</b><br/>
+      Great at multitasking, managing time, and stepping up as a team leader when it counts.<br/><br/>
+<div class="extra-skills">
+  <h3>Other Skills</h3>
+  <ul>
+    <li>💡 AWS</li>
+    <li>💡 C/C++</li>
+     <li>💡 Java</li>
+    <li>💡 JavaScript</li>
+    <li>💡 OOP</li>
+    <li>💡 Python</li>
+    <li>💡 SQL</li>
+      </ul>
+</div>
+
+    </p>
+    <div class="icon-list">
+      <i class="fab fa-html5 skill-icon" title="HTML5"></i>
+      <i class="fab fa-css3-alt skill-icon" title="CSS3"></i>
+      <i class="fab fa-js skill-icon" title="JavaScript"></i>
+      <i class="fas fa-brain skill-icon" title="AI Basics"></i>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>My Projects 🧩</h2>
+    <div class="project-container">
+      
+      <div class="project-card">
+        <img src="solar-system.gif" alt="3D Solar System" />
+        <h3>🌌 3D Solar System</h3>
+        <p>A dynamic 3D model of the solar system using Three.js with planet animations and controls.</p>
+<a href="https://basak-anushka13.github.io/SolarSystem/" target="_blank" class="project-btn">🔗 View Live</a>
+      </div>
+
+      <div class="project-card">
+        <img src="ortho-trace.gif" alt="OrthoTrace App" />
+        <h3>🦴 OrthoTrace</h3>
+        <p>A bone fracture detection app that leverages machine learning to analyze X-ray images and assist doctors with quick diagnosis.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="weather-app.gif" alt="Weather App" />
+        <h3>☁️ Cloud-Based Weather App</h3>
+        <p>Weather app with live updates, built using cloud APIs and responsive design.</p>
+      </div>
+
+    </div>
+  </section>
+<section id="certificate" class="section">
+  <h2>Certification 🏅</h2>
+  <div class="certificate-card">
+    <h3>IIT Madras - Strategy Formulation and Data Visualization</h3>
+    <a href="iit.jpg" download class="download-btn">⬇️ Download Certificate</a>
+  </div>
+</section>
+
+  <section id="contact" class="section">
+  <h2>Contact 📫</h2>
+  <p>
+    Email: <a href="mailto:basakanu1313@gmail.com">basakanu1313@gmail.com</a><br>
+    LinkedIn: <a href="https://www.linkedin.com/in/anushka-basak-39b2a525a" target="_blank">linkedin.com/in/anushka-basak-39b2a525a</a><br>
+    GitHub: <a href="https://github.com/basak-anushka13" target="_blank">github.com/basak-anushka13</a>
+  </p>
+
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/anushka-basak-39b2a525a" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/basak-anushka13" target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+
+  <a class="btn" href="AnushkaBasakresume.pdf" download>📄 Download Resume</a>
+</section>
+<script>
+  const toggle = document.getElementById('modeToggle');
+  const body = document.body;
+
+  toggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+  });
+</script>
+<section id="thanks" class="section">
+  <h2>Thanks for visiting!👋 </h2>
+  <img src="minion.gif" alt="AI Brain Animation" class="brain-gif" />
+</section>
+
+  <footer>Made with ❤️ by Anushka</footer>
+</body>
+
+</body>
+</html>
